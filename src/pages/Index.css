@@ -1,0 +1,30 @@
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  body {
+    background-color: #f9fafb; /* Light gray background */
+    font-family: 'Arial', sans-serif; /* Change font for better aesthetics */
+  }
+  
+  .btn-primary {
+    background-color: #4f46e5; /* Custom button color */
+    color: white;
+    border-radius: 0.375rem; /* Rounded corners */
+    padding: 0.5rem 1rem; /* Padding for button */
+  }
+  
+  .btn-primary:hover {
+    background-color: #4338ca; /* Darker shade on hover */
+  }
+  
+  img {
+    border-radius: 0.5rem; /* Rounded corners for images */
+  }

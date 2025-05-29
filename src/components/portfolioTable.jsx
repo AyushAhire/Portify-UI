@@ -39,7 +39,32 @@ export default function PortfolioTable({ optimizedData }) {
 
                 <span className="divider"></span>
 
+                
+            <div className="my-2 w-2/3">
+                <h2 className="text-2xl font-semibold">Old Portfolio</h2>
                 <div className="flex flex-col gap-y-2 my-2 mx-3">
+                    {
+                        <div className="stats stats-vertical lg:stats-horizontal shadow-xl ">
+
+                            <div className="stat">
+                                <div className="stat-title">Annual returns</div>
+                                <div className="stat-value">{(optimizedData.data.optimized_results.performance.expected_returns * 100).toFixed(2)}%</div>
+                            </div>
+
+                        
+
+                            <div className="stat">
+                                <div className="stat-title">Volatility</div>
+                                <div className="stat-value">{(optimizedData.data.optimized_results.performance.volatility * 100).toFixed(2)}%</div>
+                            </div>
+
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+            <div className="flex flex-col gap-y-2 my-2 mx-3">
                     <h2 className="text-2xl font-semibold">Equal weights Portfolio</h2>
                     {
 
@@ -67,32 +92,6 @@ export default function PortfolioTable({ optimizedData }) {
                 </div>
             </div>
 
-            <div className="my-2 w-2/3">
-                <h2 className="text-2xl font-semibold">Optimized Portfolio</h2>
-                <div className="flex flex-col gap-y-2 my-2 mx-3">
-                    {
-                        <div className="stats stats-vertical lg:stats-horizontal shadow-xl ">
-
-                            <div className="stat">
-                                <div className="stat-title">Annual returns</div>
-                                <div className="stat-value">{(optimizedData.data.optimized_results.performance.expected_returns * 100).toFixed(2)}%</div>
-                            </div>
-
-                            <div className="stat">
-                                <div className="stat-title">Sharpe ratio</div>
-                                <div className="stat-value">{optimizedData.data.optimized_results.performance.sharpe_ratio.toFixed(2)}</div>
-                            </div>
-
-                            <div className="stat">
-                                <div className="stat-title">Volatility</div>
-                                <div className="stat-value">{(optimizedData.data.optimized_results.performance.volatility * 100).toFixed(2)}%</div>
-                            </div>
-
-                        </div>
-                    }
-
-                </div>
-            </div>
 
             <div className="my-2 w-full flex flex-col justify-center items-center">
                 <div className="divider self-center w-2/3"></div>
