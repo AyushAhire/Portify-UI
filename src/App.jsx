@@ -4,7 +4,6 @@ import Optimize from './pages/Optimize'
 import App_Layout from './layout/layout'
 import Index from './pages/Index'
 import Login from './pages/Login'
-import Register from './pages/Register'
 
   
 const router = createBrowserRouter([
