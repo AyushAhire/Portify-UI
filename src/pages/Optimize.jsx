@@ -7,6 +7,7 @@ import BackTest from "../components/backtest"
 import GenerateReport from "../util/report"
 
 export default function Optimize() {
+    const BACKEND_URL = process.env.BACKEND_URL;
 
     const [investmentAmount, setInvestmentAmount] = useState(100000)
     const [duration, setDuration] = useState(1)
@@ -57,7 +58,7 @@ export default function Optimize() {
             sectorValues[key] = selectedSectors[key] / 100
         }
 
-        await fetch("http://localhost:8000/optimize", {
+        await fetch(`${BACKEND_URL}/optimize`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -91,7 +92,7 @@ export default function Optimize() {
             ...backtestData,
             loading: true
         })
-        await fetch("http://localhost:8000/backtest", {
+        await fetch(`${BACKEND_URL}/backtest`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -123,7 +124,7 @@ export default function Optimize() {
 
 
     const getSectors = async () => {
-        await fetch("http://localhost:8000/sectors/", {
+        await fetch(`${BACKEND_URL}/sectors/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
