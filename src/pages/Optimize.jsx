@@ -7,7 +7,7 @@ import BackTest from "../components/backtest"
 import GenerateReport from "../util/report"
 
 export default function Optimize() {
-    const BACKEND_URL = process.env.BACKEND_URL;
+    const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
     const [investmentAmount, setInvestmentAmount] = useState(100000)
     const [duration, setDuration] = useState(1)
